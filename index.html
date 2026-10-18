@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff6ed" />
+    <title>ყავა?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="glow glow-one"></div>
+      <div class="glow glow-two"></div>
+
+      <section class="invite-card" aria-live="polite">
+        <p class="eyebrow">მცირე მოწვევა</p>
+        <div class="cup" aria-hidden="true">
+          <div class="steam steam-one"></div>
+          <div class="steam steam-two"></div>
+          <div class="cup-body"><span></span></div>
+          <div class="saucer"></div>
+        </div>
+        <h1>ყავა ხომ არ<br /><em>დაგველია ერთად?</em></h1>
+        <p class="subtitle">ცხელი ყავა, მშვიდი საუბარი და კარგი კომპანია.</p>
+
+        <div class="answers" id="answers">
+          <button class="yes-button" id="yesButton" type="button">კი <span>↗</span></button>
+          <button class="no-button" id="noButton" type="button" aria-label="არა">არა</button>
+        </div>
+
+        <div class="success-message" id="successMessage" hidden>
+          <span class="heart">♥</span>
+          <h2>შესანიშნავია!</h2>
+          <p>მაშინ ყავაზე შევხვდეთ ☕</p>
+        </div>
+      </section>
+      <p class="hint">რჩევა: მეორე პასუხს ნუ დაედევნები.</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
