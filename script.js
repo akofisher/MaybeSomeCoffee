@@ -19,15 +19,26 @@ function moveNoButton() {
   escapeCount += 1;
 }
 
-noButton.addEventListener('pointerenter', moveNoButton);
-noButton.addEventListener('pointerdown', (event) => {
-  event.preventDefault();
+function escapeNoButton(event) {
+  event?.preventDefault();
   moveNoButton();
-});
+}
+
+noButton.addEventListener('pointerenter', moveNoButton);
+noButton.addEventListener('pointerdown', escapeNoButton);
+noButton.addEventListener('touchstart', escapeNoButton, { passive: false });
 noButton.addEventListener('click', (event) => event.preventDefault());
+
+answers.addEventListener('touchstart', (event) => {
+  const touch = event.touches[0];
+  const rect = noButton.getBoundingClientRect();
+  const padding = 34;
+  const isNearButton = touch.clientX >= rect.left - padding && touch.clientX <= rect.right + padding && touch.clientY >= rect.top - padding && touch.clientY <= rect.bottom + padding;
+
+  if (isNearButton) escapeNoButton(event);
+}, { passive: false });
 
 yesButton.addEventListener('click', () => {
   answers.hidden = true;
   successMessage.hidden = false;
-  document.querySelector('.subtitle').hidden = true;
 });
